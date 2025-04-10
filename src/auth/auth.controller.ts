@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from "@nestjs/common";
+import { Body, Controller, Get, Param, Post } from "@nestjs/common";
 import { AuthService } from "./auth.service";
 import { LoginDto } from "./dto/login.dto";
 
@@ -13,5 +13,20 @@ export class AuthController {
         @Body() LoginDto: LoginDto
     ) {
         return this.authService.Login(LoginDto);
+    }
+
+    // ? DoctorListunderUser, drdetails
+    @Get('doctorlist')
+    async doctorList(
+        @Param() empCode: string
+    ) {
+        return this.authService.GetDoctorListOfUser(empCode);
+    }
+
+    @Get('drdetails')
+    async GetDoctorDetails(
+        @Param() drcode: string
+    ) {
+        return this.authService.GetDoctorDetails(drcode);
     }
 }

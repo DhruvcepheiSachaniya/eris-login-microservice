@@ -6,12 +6,14 @@ import { JwtModule } from '@nestjs/jwt';
 import * as dotenv from 'dotenv';
 import { JwtStrategy } from "./strategy/jwt.strategy";
 import { TypeOrmModule } from "@nestjs/typeorm";
+import { UserMasterEntity } from "src/entity/usermaster.entity";
+import { MslSummaryEntity } from "src/entity/mslsummary.entity";
  
 dotenv.config();
 
 @Module({
     imports: [
-        TypeOrmModule.forFeature([  ]),
+        TypeOrmModule.forFeature([ UserMasterEntity, MslSummaryEntity ]),
         PassportModule.register({ defaultStrategy: 'jwt' }),
         JwtModule.register({
             secret: process.env.JWT_SECRET,

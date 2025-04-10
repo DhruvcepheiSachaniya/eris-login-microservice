@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { DivisionMaster } from "./divisionmaster.entity";
 
 @Entity('mslsummary')
 export class MslSummaryEntity {
@@ -88,4 +89,7 @@ export class MslSummaryEntity {
 
     @Column({ nullable: true })
     gdmempname: string;
+
+    @ManyToOne(() => DivisionMaster, division => division.doctors)
+    division: DivisionMaster;
 }
