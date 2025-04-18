@@ -90,6 +90,6 @@ export class MslSummaryEntity {
     @Column({ nullable: true })
     gdmempname: string;
 
-    @ManyToOne(() => DivisionMaster, division => division.doctors)
-    division: DivisionMaster;
+    // @ManyToOne(() => DivisionMaster, division => division.doctors)
+    // division: DivisionMaster;
 }

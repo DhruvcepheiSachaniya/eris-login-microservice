@@ -14,8 +14,8 @@ export class DivisionMaster {
     @OneToMany(() => EmployeeHighRachyEntity, emp => emp.division)
     employees: EmployeeHighRachyEntity[];
 
-    @OneToMany(() => MslSummaryEntity, msl => msl.division)
-    doctors: MslSummaryEntity[];
+    // @OneToMany(() => MslSummaryEntity, msl => msl.division)
+    // doctors: MslSummaryEntity[];
 
     @OneToMany(() => UserDivisionMappingEntity, mapping => mapping.division)
     userMappings: UserDivisionMappingEntity[];

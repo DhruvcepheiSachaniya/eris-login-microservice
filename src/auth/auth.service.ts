@@ -130,7 +130,7 @@ export class AuthService {
                 where: {
                     drcode: drcode
                 },
-                relations: ['divisionmaster']
+                // relations: ['divisionmaster']
             });
 
             if (!doctor) {
