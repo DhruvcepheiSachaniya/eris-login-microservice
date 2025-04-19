@@ -26,8 +26,9 @@ export class AuthController {
 
     @Get('drdetails')
     async GetDoctorDetails(
-        @Param('drcode') drcode: string
+        @Query('drcode') drcode: string
     ) {
+        console.log(drcode);
         return this.authService.GetDoctorDetails(drcode);
     }
 }
